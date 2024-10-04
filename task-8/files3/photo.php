@@ -14,19 +14,19 @@
     }
     
 ?>
-    <div class="container">
-    <div class="row">
+    <h1 class="text-center">All Photos</h1>
+    <div class="container ">
+    <div class="row p-3">
 
     <?php foreach($user_data as $key => $value) : ?>
 
-    <div class="card mb-3" style="width: 18rem;">
-    <div class="card-body">
-    <h5 class="card-title"><?php echo $value["title"] ?></h5>
+    <div class="card mb-3 p-3" style="width: 18rem;">
+    <div class="card-body text-center ">
+    <h5 class="card-title"><?php echo $value["title"] ;?></h5>
     <h6 class="card-subtitle mb-2 text-body-secondary"> <?php echo $value["url"] ?></h6>
     <p class="card-text"><?php echo $value["thumbnailUrl"] ?></p>
     </div>
     </div>
-
     <?php endforeach; ?>
     
     </div>

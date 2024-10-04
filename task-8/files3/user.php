@@ -14,6 +14,9 @@
     }
     
 ?>
+
+<h1 class="text-center my-5">All Users</h1>
+
     <table>
     <thead>
     <tr>

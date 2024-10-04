@@ -6,26 +6,32 @@ if (file_exists("database/albym.json")) {
 } else {
     $album = file_get_contents("https://jsonplaceholder.typicode.com/albums");
     $file_new = file_put_contents("database/albym.json", $album);
-    $data = json_decode($file_new, true);
+    $data = json_decode($album, true);
 }
 ?>
-<table>
-    <thead>
-        <tr>
-            <th class="p-2">User_ID</th>
-            <th class="p-2">id</th>
-            <th class="p-2">Title</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($data as $key => $value) : ?>
-            <tr>
-                <td class="p-2"><?php echo $value["userId"] ?></td>
-                <td class="p-2"><?php echo $value["id"] ?></td>
-                <td class="p-2"><?php echo $value["title"] ?></td>
-            </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
+<h1 class="text-center my-5">All Albums</h1>
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 200px ; width: 300px " >
+    <div class="row">
+        <table>
+            <thead>
+                <tr>
+                    <th class="p-2">User_ID</th>
+                    <th class="p-2">id</th>
+                    <th class="p-2">Title</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($data as $key => $value) : ?>
+                    <tr>
+                        <td class="p-2"><?php echo $value["userId"] ?></td>
+                        <td class="p-2"><?php echo $value["id"] ?></td>
+                        <td class="p-2"><?php echo $value["title"] ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 <?php require_once('inc/footer.php'); ?>
